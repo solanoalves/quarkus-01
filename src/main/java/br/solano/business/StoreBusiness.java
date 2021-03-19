@@ -7,10 +7,10 @@ import br.solano.repository.StoreRepository;
 
 @Dependent
 public class StoreBusiness {
-	@Inject
-	StoreRepository storeRepository;
-	
-	public void resetRepository() {
-		storeRepository.populate();
-	}
+    @Inject
+    StoreRepository storeRepository;
+    
+    public void resetRepository() {
+        storeRepository.populate();
+    }
 }

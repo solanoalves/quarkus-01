@@ -9,14 +9,14 @@ import br.solano.business.StoreBusiness;
 
 @Path("/reset")
 public class StoreResource {
-	
-	@Inject
-	StoreBusiness storeBusiness;
-	
+    
+    @Inject
+    StoreBusiness storeBusiness;
+    
     @POST
     public Response reset() {
         storeBusiness.resetRepository();
         return Response.ok("OK")
-        			.build();
+                    .build();
     }
 }

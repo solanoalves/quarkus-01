@@ -12,22 +12,22 @@ import br.solano.exception.AccountNotFoundException;
 
 @Path("/event")
 public class EventResource {
-	
-	@Inject
-	AccountBusiness accountBusiness;
-	
-	@POST
+    
+    @Inject
+    AccountBusiness accountBusiness;
+    
+    @POST
     public Response processEvent(EventDTO eventDTO) {
-    	Response response = null;
-		try {
-    		response = Response.ok(accountBusiness.processAccountEvent(eventDTO))
-    						.status(Status.CREATED)
-    						.build();
-		} catch (AccountNotFoundException e) {
-			response = Response.status(Status.NOT_FOUND)
-					.entity(0)
-					.build();
-		}
-		return response;
+        Response response = null;
+        try {
+            response = Response.ok(accountBusiness.processAccountEvent(eventDTO))
+                            .status(Status.CREATED)
+                            .build();
+        } catch (AccountNotFoundException e) {
+            response = Response.status(Status.NOT_FOUND)
+                    .entity(0)
+                    .build();
+        }
+        return response;
     }
 }
